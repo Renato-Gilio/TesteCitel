@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\blant\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\blant\\.nuget\\packages"
+    ]
+  }
+}
