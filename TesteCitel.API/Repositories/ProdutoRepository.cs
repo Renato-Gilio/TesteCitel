@@ -16,16 +16,16 @@ namespace TesteCitel.API.Repositories
             _context = context;
         }
 
-        public async Task<List<Produto>> Get()
+        public async Task<List<Produtos>> Get()
         {
-            IQueryable<Produto> query = _context.Produtos;
+            IQueryable<Produtos> query = _context.Produtos;
 
             return await query.ToListAsync();
         }
 
-        public async Task<Produto> GetById(int id)
+        public async Task<Produtos> GetById(int id)
         {
-            IQueryable<Produto> query = _context.Produtos;                
+            IQueryable<Produtos> query = _context.Produtos;                
 
             return await query.FirstOrDefaultAsync(x => x.Id == id);
         }

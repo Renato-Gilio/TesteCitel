@@ -22,13 +22,13 @@ namespace TesteCitel.API.Services
 
         public async Task<ProdutoDTO> Create(SalvarProdutoDTO dto)
         {
-            Produto produto = new Produto();
-            _mapper.Map<SalvarProdutoDTO, Produto>(dto, produto);
+            Produtos produto = new Produtos();
+            _mapper.Map<SalvarProdutoDTO, Produtos>(dto, produto);
 
             _repository.Add(produto);
             await _repository.SaveChangesAsync();
 
-            var response = _mapper.Map<Produto, ProdutoDTO>(produto);
+            var response = _mapper.Map<Produtos, ProdutoDTO>(produto);
 
             return response;
         }
@@ -51,14 +51,14 @@ namespace TesteCitel.API.Services
 
         public async Task<ProdutoDTO> Update(AtualizarProdutoDTO dto, int id)
         {
-            Produto produto = new Produto();
+            Produtos produto = new Produtos();
             dto.Id = id;
-            _mapper.Map<AtualizarProdutoDTO, Produto>(dto, produto);
+            _mapper.Map<AtualizarProdutoDTO, Produtos>(dto, produto);
 
             _repository.Update(produto);
             await _repository.SaveChangesAsync();
 
-            var response = _mapper.Map<Produto, ProdutoDTO>(produto);
+            var response = _mapper.Map<Produtos, ProdutoDTO>(produto);
 
             return response;
         }

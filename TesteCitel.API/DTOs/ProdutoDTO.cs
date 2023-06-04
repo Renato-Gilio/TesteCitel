@@ -10,6 +10,7 @@ namespace TesteCitel.API.DTOs
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
+        public string Imagem { get; set; }
         public int CategoriaId { get; set; }
     }
 
@@ -26,6 +27,10 @@ namespace TesteCitel.API.DTOs
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Column(TypeName = "decimal(18, 6)")]
         public decimal Preco { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string Imagem { get; set; }
+
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]        
         public int CategoriaId { get; set; }
@@ -46,6 +51,10 @@ namespace TesteCitel.API.DTOs
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [Column(TypeName = "decimal(18, 6)")]
         public decimal Preco { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string Imagem { get; set; }
+
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int CategoriaId { get; set; }

@@ -6,8 +6,8 @@ namespace TesteCitel.API.Repositories
 {
     public interface IProdutoRepository
     {
-        Task<List<Produto>> Get();
-        Task<Produto> GetById(int id);
+        Task<List<Produtos>> Get();
+        Task<Produtos> GetById(int id);
     }
 }
  

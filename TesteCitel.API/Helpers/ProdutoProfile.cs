@@ -8,11 +8,11 @@ namespace TesteCitel.API.Helpers
     {
         public ProdutoProfile()
         {
-            CreateMap<Produto, ProdutoDTO>();
-            CreateMap<Produto, SalvarProdutoDTO>().ReverseMap();
+            CreateMap<Produtos, ProdutoDTO>();
+            CreateMap<Produtos, SalvarProdutoDTO>().ReverseMap();
             CreateMap<SalvarProdutoDTO, ProdutoDTO>();
 
-            CreateMap<Produto, AtualizarProdutoDTO>().ReverseMap();
+            CreateMap<Produtos, AtualizarProdutoDTO>().ReverseMap();
             CreateMap<AtualizarProdutoDTO, ProdutoDTO>();
         }
     }

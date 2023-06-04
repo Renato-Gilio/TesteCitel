@@ -20,6 +20,6 @@ namespace TesteCitel.API.Context
         }
 
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
     }
 }
