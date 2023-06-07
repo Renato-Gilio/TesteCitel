@@ -2,7 +2,7 @@
 
 namespace TesteCitel.API.Models
 {
-    [Table("Produtos")]
+    [Table( "Produtos")]
     public class Produtos
     {
         public int Id { get; set; }

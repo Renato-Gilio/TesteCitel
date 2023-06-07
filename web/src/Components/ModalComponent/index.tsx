@@ -1,38 +1,55 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from 'react';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 interface IModalComponentProps {
-    handleShow: () => void;
-    handleClose: () => void;
-    show: boolean;
-    modalName: string;
-    modalTitle: string;
-    children: React.ReactNode;
+  modalName: string;
+  modalTitle: string;
+  component: React.ComponentType<any>;
+  type?: string;
+  arrayChild?: any[]
+  id?: number;
 }
 
-const ModalComponent = ({ 
-    handleShow, 
-    handleClose, 
-    show, 
-    modalName,
-    modalTitle,
-    children 
+const ModalComponent = ({
+  modalName,
+  modalTitle,
+  component: Component,
+  type,
+  arrayChild,
+  id
 }: IModalComponentProps) => {
-    return (
-        <>
-            <Button variant="primary" className="btn btn-success" onClick={handleShow}>
-                {modalName}
-            </Button>
+  const [show, setShow] = useState(false);
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{modalTitle}</Modal.Title>
-                </Modal.Header>
+  const handleOpen = () => {
+    setShow(true);
+  };
 
-                <Modal.Body>{children}</Modal.Body>
-            </Modal>
-        </>
-    );
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  return (
+    <>
+      <Button
+        variant="primary"
+        className={type === "editar" ? "btn btn-primary" : "btn btn-success"}
+        onClick={handleOpen}
+      >
+        {modalName}
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{modalTitle}</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <Component id={id} categorias={arrayChild} handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+    </>
+  );
 };
 
-export { ModalComponent }
+export { ModalComponent };

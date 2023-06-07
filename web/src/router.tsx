@@ -1,19 +1,17 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import { NotFound } from './pages/NotFound';
-import { Produtos } from './pages/Produtos';
-import { Categorias } from './pages/Categorias';
+import { NotFound } from "./pages/NotFound";
+import { Produtos } from "./pages/Produtos";
 
 const Router = () => {
-    return (
-        <Routes>
-            <Route path="*" element={<NotFound />} />
+  return (
+    <Routes>
+      <Route path="*" element={<NotFound />} />
 
-            <Route path="/" element={<Produtos />} />
-            <Route path="/categorias" element={<Categorias />} />
-        </Routes>
-    );
+      <Route path="/" element={<Produtos />} />
+    </Routes>
+  );
 };
 
 export { Router };
